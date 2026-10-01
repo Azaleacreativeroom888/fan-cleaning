@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ブログ | おそうじ study room</title>
+<style>
+  :root {
+    --blue: #2f7fd6;
+    --blue-deep: #1b4f94;
+    --blue-light: #e8f2fc;
+    --blue-pale: #f4f9fe;
+    --white: #ffffff;
+    --text: #1f3550;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.8;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  header {
+    background: var(--white);
+    border-bottom: 3px solid var(--blue);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .header-inner {
+    max-width: 960px; margin: 0 auto; padding: 12px 20px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+  .logo { font-weight: bold; font-size: 1.2rem; color: var(--blue-deep); }
+  .logo span { color: var(--blue); }
+  nav { display: flex; gap: 18px; font-size: 0.95rem; }
+  nav a { padding: 2px 4px; border-bottom: 2px solid transparent; }
+  nav a:hover, nav a.current { border-bottom-color: var(--blue); color: var(--blue); }
+
+  .page-title {
+    background: linear-gradient(180deg, var(--blue-light), var(--white));
+    padding: 40px 20px 24px; text-align: center;
+  }
+  .page-title h1 { font-size: 1.8rem; color: var(--blue-deep); }
+  .page-title p { font-size: 0.95rem; margin-top: 6px; }
+
+  main { max-width: 600px; margin: 0 auto; padding: 16px 20px 60px; }
+
+  .timeline { border: 2px solid var(--blue-light); border-radius: 16px; overflow: hidden; }
+  .post {
+    padding: 18px 22px;
+    border-bottom: 2px solid var(--blue-light);
+    background: var(--white);
+  }
+  .post:last-child { border-bottom: none; }
+  .post:hover { background: var(--blue-pale); }
+  .post time {
+    display: block; font-size: 0.82rem; color: var(--blue); font-weight: bold; margin-bottom: 4px;
+  }
+  .post p { font-size: 0.97rem; white-space: pre-wrap; }
+
+  footer {
+    background: var(--blue-deep); color: var(--white);
+    text-align: center; padding: 22px 20px; font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">おそうじ<span>study</span>room</a>
+    <nav>
+      <a href="index.html">ホーム</a>
+      <a href="blog.html" class="current">ブログ</a>
+      <a href="column.html">コラム</a>
+      <a href="about.html">about</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-title">
+  <h1>ブログ</h1>
+  <p>掃除の勉強の進捗を、ひとことずつ。</p>
+</section>
+
+<main>
+  <!-- 新しい投稿は一番上に追加してください -->
+  <div class="timeline">
+
+    <article class="post">
+      <time datetime="2026-10-01">2026.10.01</time>
+      <p>今日から掃除の勉強サイトを始めた。まずは洗剤の種類（酸性・中性・アルカリ性）から調べてみる。</p>
+    </article>
+
+    <article class="post">
+      <time datetime="2026-10-02">2026.10.02</time>
+      <p>水垢はアルカリ性、油汚れは…と、汚れの性質に合わせて洗剤を選ぶのが基本らしい。意外と奥が深い。</p>
+    </article>
+
+    <article class="post">
+      <time datetime="2026-10-03">2026.10.03</time>
+      <p>重曹とクエン酸の使い分けをメモ。次はお風呂の掃除について勉強する予定。</p>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  <p>&copy; おそうじ study room</p>
+</footer>
+
+</body>
+</html>
