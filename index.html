@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>おそうじ study room | 掃除の勉強サイト</title>
+<style>
+  :root {
+    --blue: #2f7fd6;
+    --blue-deep: #1b4f94;
+    --blue-light: #e8f2fc;
+    --blue-pale: #f4f9fe;
+    --white: #ffffff;
+    --text: #1f3550;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.8;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  header {
+    background: var(--white);
+    border-bottom: 3px solid var(--blue);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .header-inner {
+    max-width: 960px; margin: 0 auto; padding: 12px 20px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+  .logo { font-weight: bold; font-size: 1.2rem; color: var(--blue-deep); }
+  .logo span { color: var(--blue); }
+  nav { display: flex; gap: 18px; font-size: 0.95rem; }
+  nav a { padding: 2px 4px; border-bottom: 2px solid transparent; }
+  nav a:hover, nav a.current { border-bottom-color: var(--blue); color: var(--blue); }
+
+  .hero {
+    background: linear-gradient(180deg, var(--blue-light), var(--white));
+    padding: 56px 20px 40px;
+  }
+  .hero-inner {
+    max-width: 960px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;
+  }
+  .hero-text { flex: 1 1 300px; max-width: 460px; }
+  .hero-text .label {
+    display: inline-block; background: var(--blue); color: var(--white);
+    padding: 2px 14px; border-radius: 999px; font-size: 0.85rem; margin-bottom: 14px;
+  }
+  .hero-text h1 { font-size: 2rem; line-height: 1.4; color: var(--blue-deep); margin-bottom: 14px; }
+  .hero-text p { margin-bottom: 22px; }
+  .btn {
+    display: inline-block; background: var(--blue); color: var(--white);
+    padding: 10px 26px; border-radius: 999px; font-weight: bold;
+    box-shadow: 0 3px 0 var(--blue-deep);
+  }
+  .btn:hover { transform: translateY(2px); box-shadow: 0 1px 0 var(--blue-deep); }
+  .hero-art { flex: 0 1 280px; text-align: center; }
+  .hero-art svg { width: 100%; max-width: 280px; height: auto; }
+
+  main { max-width: 960px; margin: 0 auto; padding: 40px 20px 60px; }
+  h2 {
+    font-size: 1.4rem; color: var(--blue-deep); margin-bottom: 20px;
+    padding-left: 12px; border-left: 6px solid var(--blue);
+  }
+  .intro { margin-bottom: 44px; background: var(--blue-pale); border-radius: 16px; padding: 22px 24px; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .card {
+    border: 2px solid var(--blue-light); border-radius: 16px; padding: 22px;
+    background: var(--white); transition: border-color .2s, transform .2s;
+  }
+  .card:hover { border-color: var(--blue); transform: translateY(-3px); }
+  .card .icon { font-size: 1.8rem; }
+  .card h3 { color: var(--blue); margin: 6px 0; }
+  .card p { font-size: 0.92rem; }
+
+  footer {
+    background: var(--blue-deep); color: var(--white);
+    text-align: center; padding: 22px 20px; font-size: 0.85rem;
+  }
+
+  @media (max-width: 600px) {
+    .hero-text h1 { font-size: 1.6rem; }
+    nav { gap: 12px; font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">おそうじ<span>study</span>room</a>
+    <nav>
+      <a href="index.html" class="current">ホーム</a>
+      <a href="blog.html">ブログ</a>
+      <a href="column.html">コラム</a>
+      <a href="about.html">about</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="label">CLEANING STUDY</span>
+      <h1>きれいを学んで、<br>毎日をすっきりと。</h1>
+      <p>掃除のコツ、道具、洗剤の仕組みまで。ゆっくり勉強しながら、その記録をのせていくサイトです。</p>
+      <a href="blog.html" class="btn">勉強の記録を見る</a>
+    </div>
+    <div class="hero-art">
+      <!-- T-shirt illustration -->
+      <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="青いTシャツのイラスト">
+        <circle cx="140" cy="140" r="128" fill="#ffffff" opacity="0.7"/>
+        <!-- bubbles -->
+        <circle cx="48" cy="70" r="14" fill="none" stroke="#7fb5ec" stroke-width="3"/>
+        <circle cx="74" cy="42" r="7" fill="none" stroke="#7fb5ec" stroke-width="3"/>
+        <circle cx="236" cy="62" r="12" fill="none" stroke="#7fb5ec" stroke-width="3"/>
+        <circle cx="216" cy="34" r="6" fill="none" stroke="#7fb5ec" stroke-width="3"/>
+        <circle cx="244" cy="214" r="9" fill="none" stroke="#7fb5ec" stroke-width="3"/>
+        <!-- shirt body -->
+        <path d="M95 52 L55 76 L22 128 L58 150 L80 118 L80 238 Q80 248 90 248 L190 248 Q200 248 200 238 L200 118 L222 150 L258 128 L225 76 L185 52 Q165 78 140 78 Q115 78 95 52 Z"
+              fill="#2f7fd6" stroke="#1b4f94" stroke-width="5" stroke-linejoin="round"/>
+        <!-- sleeve edges -->
+        <path d="M30 140 L58 154" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+        <path d="M250 140 L222 154" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+        <!-- collar -->
+        <path d="M95 52 Q115 84 140 84 Q165 84 185 52" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+        <!-- print: sparkle + text -->
+        <path d="M140 108 L146 126 L164 132 L146 138 L140 156 L134 138 L116 132 L134 126 Z" fill="#ffffff"/>
+        <circle cx="172" cy="112" r="4" fill="#ffffff"/>
+        <circle cx="108" cy="154" r="3" fill="#ffffff"/>
+        <text x="140" y="196" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff"
+              font-family="Hiragino Maru Gothic ProN, Yu Gothic, sans-serif">おそうじ</text>
+        <text x="140" y="220" text-anchor="middle" font-size="11" letter-spacing="3" fill="#cfe4fa"
+              font-family="sans-serif">CLEAN &amp; FRESH</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="intro">
+    <h2>このサイトについて</h2>
+    <p>掃除って、知れば知るほど奥が深い。汚れの種類、洗剤の性質、場所ごとのコツ……。ここでは掃除のことを少しずつ勉強して、日々の進捗や気づきをまとめていきます。</p>
+  </section>
+
+  <h2>コンテンツ</h2>
+  <div class="cards">
+    <a href="blog.html" class="card">
+      <div class="icon">📝</div>
+      <h3>ブログ</h3>
+      <p>勉強の進捗を日付つきで一言ずつ。つぶやき感覚の学習日記です。</p>
+    </a>
+    <a href="column.html" class="card">
+      <div class="icon">🧼</div>
+      <h3>コラム</h3>
+      <p>掃除にまつわる漫画・イラスト・4コマや、ちょっとした小論文風の読みものを置いています。</p>
+    </a>
+    <a href="about.html" class="card">
+      <div class="icon">🫧</div>
+      <h3>about</h3>
+      <p>このサイトと作っている人についての紹介ページです。</p>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; おそうじ study room</p>
+</footer>
+
+</body>
+</html>
