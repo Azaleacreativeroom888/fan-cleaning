@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>about | おそうじ study room</title>
+<style>
+  :root {
+    --blue: #2f7fd6;
+    --blue-deep: #1b4f94;
+    --blue-light: #e8f2fc;
+    --blue-pale: #f4f9fe;
+    --white: #ffffff;
+    --text: #1f3550;
+    --muted: #6f87a3;
+    --error: #d6455d;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.8;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  header {
+    background: var(--white);
+    border-bottom: 3px solid var(--blue);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .header-inner {
+    max-width: 960px; margin: 0 auto; padding: 12px 20px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+  .logo { font-weight: bold; font-size: 1.2rem; color: var(--blue-deep); }
+  .logo span { color: var(--blue); }
+  nav { display: flex; gap: 18px; font-size: 0.95rem; }
+  nav a { padding: 2px 4px; border-bottom: 2px solid transparent; }
+  nav a:hover, nav a.current { border-bottom-color: var(--blue); color: var(--blue); }
+
+  .page-title {
+    background: linear-gradient(180deg, var(--blue-light), var(--white));
+    padding: 40px 20px 24px; text-align: center;
+  }
+  .page-title h1 { font-size: 1.8rem; color: var(--blue-deep); }
+  .page-title .sub { font-size: 0.8rem; color: var(--muted); letter-spacing: 3px; margin-top: 2px; }
+  .page-title .lead { font-size: 0.95rem; margin-top: 10px; }
+
+  main { max-width: 900px; margin: 0 auto; padding: 16px 20px 60px; }
+
+  .section-label {
+    font-size: 0.8rem; letter-spacing: 3px; color: var(--blue);
+    margin: 36px 0 16px; display: flex; align-items: center; gap: 12px; font-weight: bold;
+  }
+  .section-label::after { content: ''; flex: 1; height: 2px; background: var(--blue-light); }
+
+  .box {
+    border: 2px solid var(--blue-light); border-radius: 16px;
+    padding: 22px 26px; background: var(--white); position: relative;
+  }
+  .box::before {
+    content: ''; position: absolute; left: 0; top: 14px; bottom: 14px;
+    width: 5px; background: var(--blue); border-radius: 0 4px 4px 0;
+  }
+  .box p { font-size: 0.97rem; margin-bottom: 10px; }
+  .box p:last-child { margin-bottom: 0; }
+
+  .link-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+  .link-card {
+    display: flex; align-items: center; gap: 14px;
+    border: 2px solid var(--blue-light); border-radius: 14px; padding: 14px 16px;
+    background: var(--white); transition: border-color .2s, transform .2s;
+  }
+  .link-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+  .link-icon {
+    font-size: 1.5rem; width: 44px; height: 44px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--blue-pale); border-radius: 10px;
+  }
+  .link-text { flex: 1; min-width: 0; }
+  .link-name { display: block; font-weight: bold; color: var(--blue-deep); font-size: 0.95rem; }
+  .link-desc { display: block; font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+  .link-arrow { color: var(--blue); font-size: 1.2rem; }
+
+  .form-card {
+    border: 2px solid var(--blue-light); border-radius: 16px;
+    padding: 24px 26px; background: var(--blue-pale);
+  }
+  .form-intro { font-size: 0.9rem; margin-bottom: 18px; }
+  .form-group { margin-bottom: 16px; }
+  .form-label { display: block; font-size: 0.85rem; font-weight: bold; color: var(--blue-deep); margin-bottom: 4px; }
+  .required { color: var(--error); }
+  .form-input, .form-textarea {
+    width: 100%; font-family: inherit; font-size: 0.95rem; color: var(--text);
+    background: var(--white); border: 2px solid var(--blue-light); border-radius: 10px;
+    padding: 9px 14px; outline: none; transition: border-color .2s;
+  }
+  .form-input:focus, .form-textarea:focus { border-color: var(--blue); }
+  .form-textarea { min-height: 130px; resize: vertical; }
+  .form-submit {
+    font-family: inherit; font-size: 0.95rem; font-weight: bold; cursor: pointer;
+    background: var(--blue); color: var(--white); border: none; border-radius: 999px;
+    padding: 10px 28px; box-shadow: 0 3px 0 var(--blue-deep);
+  }
+  .form-submit:hover { transform: translateY(2px); box-shadow: 0 1px 0 var(--blue-deep); }
+
+  .back-link {
+    display: inline-block; margin-top: 32px; font-size: 0.9rem; color: var(--blue);
+    border: 2px solid var(--blue-light); border-radius: 999px; padding: 6px 18px;
+  }
+  .back-link:hover { border-color: var(--blue); }
+
+  footer { background: var(--blue-deep); color: var(--white); padding: 24px 20px; text-align: center; }
+  footer p { font-size: 0.75rem; line-height: 1.9; max-width: 800px; margin: 0 auto 8px; opacity: 0.9; }
+  footer .copy { font-size: 0.85rem; opacity: 1; margin-top: 12px; }
+
+  @media (max-width: 600px) { nav { gap: 12px; font-size: 0.85rem; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">おそうじ<span>study</span>room</a>
+    <nav>
+      <a href="index.html">ホーム</a>
+      <a href="blog.html">ブログ</a>
+      <a href="column.html">コラム</a>
+      <a href="about.html" class="current">about</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-title">
+  <h1>about</h1>
+  <p class="sub">— About &amp; Contact —</p>
+  <p class="lead">このサイトと、作っている人についての紹介です。</p>
+</section>
+
+<main>
+
+  <p class="section-label">このサイトについて</p>
+  <div class="box">
+    <p>「おそうじ study room」は、掃除のことを少しずつ勉強して、その記録をまとめていくサイトです。</p>
+    <p>ブログには勉強の進捗をひとことずつ、コラムには掃除にまつわる漫画・イラスト・4コマや、軽い読みものを載せています。</p>
+  </div>
+
+  <p class="section-label">自己紹介</p>
+  <div class="box">
+    <p>Azalea72（りっちゃん）です。漫画とイラストを描いています。</p>
+    <p>ここには、勉強しながら気づいたことや、描いた絵を気ままに置いていきます。</p>
+  </div>
+
+  <p class="section-link-spacer"></p>
+  <p class="section-label">漫画・イラスト掲載サイト</p>
+  <div class="link-grid">
+    <a class="link-card" href="https://rookie.shonenjump.com/users/14728546961183734555" target="_blank" rel="noopener">
+      <div class="link-icon">📚</div>
+      <div class="link-text">
+        <span class="link-name">ジャンプルーキー</span>
+        <span class="link-desc">オリジナル漫画を掲載中</span>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+    <a class="link-card" href="https://www.pixiv.net/users/105728284" target="_blank" rel="noopener">
+      <div class="link-icon">🎨</div>
+      <div class="link-text">
+        <span class="link-name">Pixiv</span>
+        <span class="link-desc">イラストを掲載中</span>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+  </div>
+
+  <p class="section-label">SNS・その他</p>
+  <div class="link-grid">
+    <a class="link-card" href="https://bsky.app/profile/azaleaazalea88.bsky.social" target="_blank" rel="noopener">
+      <div class="link-icon">🦋</div>
+      <div class="link-text">
+        <span class="link-name">Bluesky</span>
+        <span class="link-desc">近況・作品のお知らせ</span>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+    <a class="link-card" href="https://www.youtube.com/@LilyPopins0512" target="_blank" rel="noopener">
+      <div class="link-icon">🎬</div>
+      <div class="link-text">
+        <span class="link-name">YouTube（リリポピ）</span>
+        <span class="link-desc">動画チャンネル</span>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+  </div>
+
+  <p class="section-label">お問い合わせフォーム</p>
+  <div class="form-card">
+    <p class="form-intro">ご質問・ご感想などはこちらからどうぞ。</p>
+    <form action="https://formspree.io/f/maqvpvoz" method="POST">
+      <div class="form-group">
+        <label class="form-label" for="name">お名前</label>
+        <input class="form-input" type="text" id="name" name="name" placeholder="お名前">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">メールアドレス <span class="required">*</span></label>
+        <input class="form-input" type="email" id="email" name="email" placeholder="example@email.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">メッセージ <span class="required">*</span></label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="メッセージを入力してください…" required></textarea>
+      </div>
+      <button class="form-submit" type="submit">📮 送信する</button>
+    </form>
+  </div>
+
+  <a class="back-link" href="index.html">← トップページに戻る</a>
+
+</main>
+
+<footer>
+  <p>当サイトに掲載されている画像・文章・作品について、AI学習への利用、トレース（トレパク）、無断転載・転載、二次利用を禁止します。</p>
+  <p>Please refrain from using any images, text, or works on this website for AI training, tracing, unauthorized reproduction, redistribution, or secondary use.</p>
+  <p class="copy">&copy; おそうじ study room</p>
+</footer>
+
+</body>
+</html>
