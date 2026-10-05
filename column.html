@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コラム | おそうじ study room</title>
+<style>
+  :root {
+    --blue: #2f7fd6;
+    --blue-deep: #1b4f94;
+    --blue-light: #e8f2fc;
+    --blue-pale: #f4f9fe;
+    --white: #ffffff;
+    --text: #1f3550;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.8;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  header {
+    background: var(--white);
+    border-bottom: 3px solid var(--blue);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .header-inner {
+    max-width: 960px; margin: 0 auto; padding: 12px 20px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+  .logo { font-weight: bold; font-size: 1.2rem; color: var(--blue-deep); }
+  .logo span { color: var(--blue); }
+  nav { display: flex; gap: 18px; font-size: 0.95rem; }
+  nav a { padding: 2px 4px; border-bottom: 2px solid transparent; }
+  nav a:hover, nav a.current { border-bottom-color: var(--blue); color: var(--blue); }
+
+  .page-title {
+    background: linear-gradient(180deg, var(--blue-light), var(--white));
+    padding: 40px 20px 24px; text-align: center;
+  }
+  .page-title h1 { font-size: 1.8rem; color: var(--blue-deep); }
+  .page-title p { font-size: 0.95rem; margin-top: 6px; }
+
+  main { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+  h2 {
+    font-size: 1.4rem; color: var(--blue-deep); margin: 36px 0 18px;
+    padding-left: 12px; border-left: 6px solid var(--blue);
+  }
+
+  /* gallery */
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+  .work { border: 2px solid var(--blue-light); border-radius: 14px; overflow: hidden; background: var(--white); }
+  .work .thumb {
+    aspect-ratio: 4 / 3; background: var(--blue-pale);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--blue); font-size: 0.85rem; border-bottom: 2px dashed var(--blue-light);
+  }
+  .work .thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .work .cap { padding: 10px 14px; font-size: 0.9rem; }
+  .work .cap .tag {
+    display: inline-block; background: var(--blue); color: var(--white);
+    font-size: 0.72rem; padding: 0 10px; border-radius: 999px; margin-right: 6px;
+  }
+
+  /* 4koma */
+  .yonkoma {
+    max-width: 260px; border: 2px solid var(--blue-light); border-radius: 14px;
+    padding: 10px; background: var(--white);
+  }
+  .yonkoma .panel {
+    aspect-ratio: 16 / 9; border: 2px solid var(--blue); border-radius: 6px;
+    margin-bottom: 8px; background: var(--blue-pale);
+    display: flex; align-items: center; justify-content: center; color: var(--blue); font-size: 0.8rem;
+  }
+  .yonkoma .panel:last-of-type { margin-bottom: 0; }
+  .yonkoma .cap { font-size: 0.9rem; margin-top: 8px; text-align: center; }
+
+  /* essay */
+  .essay {
+    border: 2px solid var(--blue-light); border-radius: 16px;
+    padding: 24px 26px; margin-bottom: 20px; background: var(--white);
+  }
+  .essay time { font-size: 0.82rem; color: var(--blue); font-weight: bold; }
+  .essay h3 { font-size: 1.2rem; color: var(--blue-deep); margin: 2px 0 10px; }
+  .essay p { font-size: 0.97rem; margin-bottom: 10px; }
+  .essay p:last-child { margin-bottom: 0; }
+
+  footer {
+    background: var(--blue-deep); color: var(--white);
+    text-align: center; padding: 22px 20px; font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">おそうじ<span>study</span>room</a>
+    <nav>
+      <a href="index.html">ホーム</a>
+      <a href="blog.html">ブログ</a>
+      <a href="column.html" class="current">コラム</a>
+      <a href="about.html">about</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-title">
+  <h1>コラム</h1>
+  <p>掃除にまつわる漫画・イラスト・4コマと、ちょっとした読みもの。</p>
+</section>
+
+<main>
+
+  <h2>漫画・イラスト</h2>
+  <!-- 画像を入れるときは .thumb の中の文字を <img src="画像のパス" alt="説明"> に置き換えてください -->
+  <div class="gallery">
+    <div class="work">
+      <div class="thumb">イラスト（準備中）</div>
+      <div class="cap"><span class="tag">イラスト</span>おそうじ道具たち</div>
+    </div>
+    <div class="work">
+      <div class="thumb">漫画（準備中）</div>
+      <div class="cap"><span class="tag">漫画</span>はじめての大掃除</div>
+    </div>
+    <div class="work">
+      <div class="thumb">イラスト（準備中）</div>
+      <div class="cap"><span class="tag">イラスト</span>ぴかぴかの窓</div>
+    </div>
+  </div>
+
+  <h2>4コマ</h2>
+  <div class="yonkoma">
+    <div class="panel">1コマ目</div>
+    <div class="panel">2コマ目</div>
+    <div class="panel">3コマ目</div>
+    <div class="panel">4コマ目</div>
+    <p class="cap">「重曹とクエン酸」（準備中）</p>
+  </div>
+
+  <h2>読みもの</h2>
+
+  <article class="essay">
+    <time datetime="2026-10-04">2026.10.04</time>
+    <h3>掃除は「汚れを知ること」から始まる</h3>
+    <p>掃除というと、とにかくこすって落とすものだと思っていた。けれど勉強を始めてみると、汚れにはそれぞれ性質があることがわかってきた。</p>
+    <p>たとえば油汚れは酸性寄り、水垢はアルカリ性寄りの汚れで、それぞれ逆の性質をもつ洗剤が効きやすい。力まかせにこするより、相手を知って合う道具を選ぶほうが、ずっと楽できれいになる。</p>
+    <p>掃除は体を動かす作業であると同時に、観察して考える作業でもある。これからもその面白さを少しずつ書いていきたい。</p>
+  </article>
+
+  <article class="essay">
+    <time datetime="2026-10-05">2026.10.05</time>
+    <h3>きれいな部屋と気持ちのこと</h3>
+    <p>机の上を片づけただけで、頭の中までさっぱりした経験は誰にでもあると思う。掃除には、空間だけでなく気持ちを整える力もあるのかもしれない。</p>
+    <p>大がかりな掃除でなくても、毎日ひとつ場所を決めて拭くだけで十分。小さな習慣の積み重ねについて、これから考えてみたい。</p>
+  </article>
+
+</main>
+
+<footer>
+  <p>&copy; おそうじ study room</p>
+</footer>
+
+</body>
+</html>
